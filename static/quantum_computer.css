@@ -36,3 +36,11 @@
 .ResultExplanation {
     margin: 1em;
 }
+
+.SubmitButton {
+    width: 10em;
+    height: 5em;
+    margin: 0.5em;
+    border-radius: 1.5em 1.5em 1.5em 1.5em;
+    font-size: 1em;
+}
