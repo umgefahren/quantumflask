@@ -56,10 +56,9 @@ def quantum_computer():
 
         if request.form["BackendDecision"] == "IBMQ":
             try:
-                IBMQ.enable_account(environ["TOKEN"])
+                provider = IBMQ.enable_account(environ["TOKEN"])
             except Exception as e:
                 print(e)
-            finally:
                 provider = IBMQ.load_account()
             backend_list = [
                 provider.backend.ibmq_manila,
