@@ -1,14 +1,17 @@
 import matplotlib.axes
-from flask import Flask
+from flask import Flask, flash
 from flask import render_template, request
 from os import environ
 
+from time import sleep
 from qiskit import ClassicalRegister, QuantumCircuit, QuantumRegister
 from qiskit import execute, BasicAer, IBMQ
 import qiskit
 from qiskit.tools.visualization import plot_histogram
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="")
+app.secret_key = b"eudjenasjeenendje"
+
 
 @app.before_first_request
 def init_ibmq():
@@ -38,6 +41,7 @@ def normal_computer():
 @app.route('/quantum_computer/', methods=['GET', 'POST'])
 def quantum_computer():
     if request.method == 'POST':
+        flash("Processing...")
         print(request.form)
         flip = True
         if "Don't Flip" == request.form["FlipDecision"]:
@@ -53,7 +57,6 @@ def quantum_computer():
             qc.id(q[0])
         qc.h(q[0])
         qc.measure(q, c)
-
         if request.form["BackendDecision"] == "IBMQ":
             try:
                 provider = IBMQ.enable_account(environ["TOKEN"])
@@ -77,6 +80,11 @@ def quantum_computer():
         print(backend)
 
         job = execute(qc, backend, shots=200)
+        id = job.job_id()
+
+        if request.form["BackendDecision"] == "IBMQ":
+            return render_template("rediriction.html", url="https://quantum-computing.ibm.com/jobs/{}".format(id))
+
         result = job.result()
         counts = result.get_counts(qc)
         qc.draw("mpl", filename="static/images/out.png")
