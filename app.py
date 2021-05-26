@@ -11,15 +11,6 @@ from qiskit.tools.visualization import plot_histogram
 from qiskit.test.mock import FakeVigo
 
 app = Flask(__name__, static_url_path="")
-app.secret_key = b"eudjenasjeenendje"
-
-
-@app.before_first_request
-def init_ibmq():
-    try:
-        IBMQ.enable_account(environ["TOKEN"])
-    except Exception as e:
-        print(e)
 
 @app.route('/')
 def index():
