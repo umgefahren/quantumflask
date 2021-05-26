@@ -10,6 +10,12 @@ from qiskit.tools.visualization import plot_histogram
 
 app = Flask(__name__)
 
+@app.before_first_request
+def init_ibmq():
+    try:
+        IBMQ.enable_account(environ["TOKEN"])
+    except Exception as e:
+        print(e)
 
 @app.route('/')
 def index():
@@ -82,8 +88,5 @@ def quantum_computer():
         return render_template("quantum_computer.html")
 
 if __name__ == '__main__':
-    try:
-        IBMQ.enable_account(environ["TOKEN"])
-    except:
-        pass
     app.run()
+
