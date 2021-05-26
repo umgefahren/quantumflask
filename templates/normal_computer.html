@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for("static", filename="quant_field.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="normal_computer.css") }}">
+    <title>Play Against Normal Computer</title>
+</head>
+<body>
+<div class="Game">
+    <a href="..">
+    <div class="Header">
+        <h1>Back to Menu</h1>
+    </div>
+    </a>
+    <div class="StartCoin">
+        <p>Heads</p>
+    </div>
+    <svg id="Layer_1" class="Arrow" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.27 122.88" width="50px" height="50px"><title>bottom-arrow</title><path d="M79.79,0V58.44H102c3.71.16,6.35,1.39,7.87,3.7,4.13,6.19-1.51,12.31-5.42,16.62C93.35,90.94,68.22,113,62.74,119.44c-4.15,4.59-10.06,4.59-14.21,0-5.66-6.61-32.16-30-42.71-41.85-3.66-4.12-8.19-9.74-4.38-15.45C3,59.83,5.61,58.6,9.32,58.44H31.47V0Z"/></svg>
+    <div class="UnkownCoin">
+        <p id="thinking1">Thinking...</p>
+    </div>
+    <svg id="Layer_1" class="Arrow" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.27 122.88" width="50px" height="50px"><title>bottom-arrow</title><path d="M79.79,0V58.44H102c3.71.16,6.35,1.39,7.87,3.7,4.13,6.19-1.51,12.31-5.42,16.62C93.35,90.94,68.22,113,62.74,119.44c-4.15,4.59-10.06,4.59-14.21,0-5.66-6.61-32.16-30-42.71-41.85-3.66-4.12-8.19-9.74-4.38-15.45C3,59.83,5.61,58.6,9.32,58.44H31.47V0Z"/></svg>
+    <div class="YourChoice">
+        <p>Make Your Decision:</p>
+        <div class="DecisionBox">
+            <input type="radio" id="DontFlip" name="FlipDecision" value="Don't Flip">
+            <label for="DontFlip">Don't Flip</label>
+            <input type="radio" id="Flip" name="FlipDecision" value="Flip">
+            <label for="Flip">Flip</label>
+        </div>
+        <button type="button" onclick="EvaluateChoiceNormal()" class="SubmitButton">Submit</button>
+    </div>
+    <svg id="Layer_1" class="Arrow" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.27 122.88" width="50px" height="50px"><title>bottom-arrow</title><path d="M79.79,0V58.44H102c3.71.16,6.35,1.39,7.87,3.7,4.13,6.19-1.51,12.31-5.42,16.62C93.35,90.94,68.22,113,62.74,119.44c-4.15,4.59-10.06,4.59-14.21,0-5.66-6.61-32.16-30-42.71-41.85-3.66-4.12-8.19-9.74-4.38-15.45C3,59.83,5.61,58.6,9.32,58.44H31.47V0Z"/></svg>
+    <div class="UnkownCoin">
+        <p id="thinking2">Waiting</p>
+    </div>
+    <svg id="Layer_1" class="Arrow" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.27 122.88" width="50px" height="50px"><title>bottom-arrow</title><path d="M79.79,0V58.44H102c3.71.16,6.35,1.39,7.87,3.7,4.13,6.19-1.51,12.31-5.42,16.62C93.35,90.94,68.22,113,62.74,119.44c-4.15,4.59-10.06,4.59-14.21,0-5.66-6.61-32.16-30-42.71-41.85-3.66-4.12-8.19-9.74-4.38-15.45C3,59.83,5.61,58.6,9.32,58.44H31.47V0Z"/></svg>
+    <div class="StartCoin">
+        <p id="ResultCoin">?</p>
+    </div>
+    <svg id="Layer_1" class="Arrow" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.27 122.88" width="50px" height="50px"><title>bottom-arrow</title><path d="M79.79,0V58.44H102c3.71.16,6.35,1.39,7.87,3.7,4.13,6.19-1.51,12.31-5.42,16.62C93.35,90.94,68.22,113,62.74,119.44c-4.15,4.59-10.06,4.59-14.21,0-5.66-6.61-32.16-30-42.71-41.85-3.66-4.12-8.19-9.74-4.38-15.45C3,59.83,5.61,58.6,9.32,58.44H31.47V0Z"/></svg>
+    <div class="Result">
+        <p>Winner:</p>
+        <p id="Winner">?</p>
+    </div>
+</div>
+<div class="BottomBox">
+    <a href="/impressum/" style="color: black">
+    <p>Impressum</p>
+    </a>
+</div>
+<script src="{{ url_for("static", filename="script/normal_computer.js") }}"></script>
+</body>
+</html>

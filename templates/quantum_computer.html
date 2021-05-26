@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for("static", filename="quant_field.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="quantum_computer.css") }}">
+    <title>Quantum Computer</title>
+</head>
+<body>
+<a href="..">
+    <div class="Header">
+        <h1>Back to Menu</h1>
+    </div>
+</a>
+<div class="Instructions">
+    <div class="InstructionsText">
+        <h2>Play against a quantum computer</h2>
+        <p>This time you will actually play against an actual quantum computer. You will play against one of the IBM Quantum Computers.</p>
+        <img class="QImage" src="https://newsroom.ibm.com/file.php/183868/IBM_SystemOne_Andrew_Lindemann_2-1500.jpg?thumbnail=modal" width=80% height=80% style="margin: 0.5em">
+        <p>In order to do that, you will have to submit your flip or not flip choice previously.</p>
+        <p>You will also have to choose which backend to use. Either a simulator (fast) or an actual quantum computer (slow).
+            If you don't get an imminent result with the quantum computer: This is normal. We first have to schedule this stupid computation
+            on very high demand high end machines. This may take up to several minutes.
+        </p>
+    </div>
+</div>
+<div class="QForm">
+    <form method="post" class="Form">
+        <input type="radio" id="DontFlip" name="FlipDecision" value="Don't Flip">
+        <label for="DontFlip">Don't Flip</label>
+        <input type="radio" id="Flip" name="FlipDecision" value="Flip">
+        <label for="Flip">Flip</label><br>
+        <input type="radio" id="IBMQ" name="BackendDecision" value="IBMQ">
+        <label for="IBMQ">IBM Quantum Computer</label>
+        <input type="radio" id="Simulator" name="BackendDecision" value="Simulator">
+        <label for="Simulator">Quantum Simulator</label><br>
+        <input type="submit" value="Submit">
+    </form>
+    <h2 style="margin-left: 5em;">Attention: This may possibly take a while.</h2>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+.Instructions {
+    border: 2px solid navy;
+    background-image: linear-gradient(to left, navy, darkblue);
+    border-radius: 3em 3em 0 3em;
+    color: lightcyan;
+    margin: 2em;
+}
+
+.QImage {
+    padding: 1em;
+}
+
+.InstructionsText {
+    padding: 2em;
+}
+
+.QForm {
+    border: 2px solid mediumvioletred;
+    background-image: linear-gradient(to bottom right, maroon, magenta);
+    border-radius: 0 3em 3em 3em;
+    margin: 2em;
+}
+
+.Form {
+    padding: 2em;
+    text-align: center;
+}
+
+.ResultExplanationBox {
+    border: 2px solid mediumvioletred;
+    background-image: linear-gradient(to bottom right, maroon, magenta);
+    border-radius: 0 3em 3em 3em;
+    margin: 2em;
+}
+
+.ResultExplanation {
+    margin: 1em;
+}

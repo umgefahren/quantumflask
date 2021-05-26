@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for("static", filename="quant_field.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="quantum_computer.css") }}">
+    <title>Quantum Computer Result</title>
+</head>
+<body>
+<a href="..">
+    <div class="Header">
+        <h1>Back to Menu</h1>
+    </div>
+</a>
+<div class="ResultExplanationBox">
+    <div class="ResultExplanation">
+        <p>Below is a diagramm with the result:</p>
+        <img src="{{ url_for("static", filename="images/diagram.png") }}" style="align-content: center">
+        <p>We had to run this experiment a couple of times to correct for errors in the computer, but let's take a look at the results, shall we.</p>
+        <p>The bar with "0" marks the times were the computer won, the bar with "1" marks the times you won.
+            Maybe you actually managed to win against the computer a couple of times, but this had nothing to do with your skills,
+            it only shows the few times this machine actually made errors. On the perfect quantum computer you would have lost all the times.
+        </p>
+        <p>Below you can find a picture of the quantum circuit we used to conduct this experiment:</p>
+        <img src="{{ url_for("static", filename="images/out.png") }}">
+        <p>This may seem like cheating, but it's really not and I want to explain why.</p>
+    </div>
+</div>
+</body>
+</html>

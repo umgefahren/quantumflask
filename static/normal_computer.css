@@ -1,0 +1,53 @@
+.StartCoin {
+    background-image: linear-gradient(to bottom right, gold, goldenrod);
+    border: 2px solid goldenrod;
+    border-radius: 3em 3em 3em 3em;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+}
+
+.Arrow {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.UnkownCoin {
+    background-color: dimgrey;
+    border: 2px solid dimgrey;
+    border-radius: 4em 4em 4em 4em;
+    margin-left: 40%;
+    margin-right: 40%;
+    text-align: center;
+}
+
+.YourChoice {
+    background-color: darkorange;
+    border: 2px solid darkorange;
+    border-radius: 3em 3em 3em 3em;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+}
+
+.DecisionBox {
+    padding: 1em;
+}
+
+.SubmitButton {
+    width: 10em;
+    height: 5em;
+    margin: 0.5em;
+    border-radius: 1.5em 1.5em 1.5em 1.5em;
+    font-size: 1em;
+}
+
+.Result {
+    background-color: white;
+    border: 2px solid black;
+    margin-left: 45%;
+    margin-right: 45%;
+    color: black;
+    text-align: center;
+}
