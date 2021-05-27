@@ -49,7 +49,6 @@ def quantum_computer():
         qc.h(q[0])
         qc.measure(q, c)
         if request.form["BackendDecision"] == "IBMQ":
-            '''
             try:
                 provider = IBMQ.enable_account(environ["TOKEN"])
             except Exception as e:
@@ -67,13 +66,16 @@ def quantum_computer():
                 provider.backend.ibmq_santiago
             ]
             backend = qiskit.providers.ibmq.least_busy(backend_list)
-            '''
+        elif request.form["BackendDecision"] == "IBMQSimulator":
             backend = FakeVigo()
         else:
             backend = BasicAer.get_backend("qasm_simulator")
         print(backend)
 
         job = execute(qc, backend, shots=200)
+
+        if request.form["BackendDecision"] == "IBMQ":
+            return render_template("rediriction.html", url="https://quantum-computing.ibm.com/jobs/{}".format(job.job_id()))
 
         result = job.result()
         counts = result.get_counts(qc)
