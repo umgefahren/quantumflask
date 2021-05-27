@@ -32,7 +32,7 @@ def normal_computer():
 
 @app.route('/quantum_computer/', methods=['GET', 'POST'])
 def quantum_computer():
-    if request.method == 'POST'
+    if request.method == 'POST':
         print(request.form)
         flip = True
         if "Don't Flip" == request.form["FlipDecision"]:
