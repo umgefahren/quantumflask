@@ -1,5 +1,5 @@
 import matplotlib.axes
-from flask import Flask, flash
+from flask import Flask
 from flask import render_template, request
 from os import environ
 
@@ -32,8 +32,7 @@ def normal_computer():
 
 @app.route('/quantum_computer/', methods=['GET', 'POST'])
 def quantum_computer():
-    if request.method == 'POST':
-        flash("Processing...")
+    if request.method == 'POST'
         print(request.form)
         flip = True
         if "Don't Flip" == request.form["FlipDecision"]:
