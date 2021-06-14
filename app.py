@@ -3,9 +3,9 @@ from flask import Flask
 from flask import render_template, request
 from os import environ
 
-from time import sleep
+from time import sleep, time
 from qiskit import ClassicalRegister, QuantumCircuit, QuantumRegister
-from qiskit import execute, BasicAer, IBMQ
+from qiskit import execute, BasicAer, IBMQ, Aer
 import qiskit
 from qiskit.tools.visualization import plot_histogram
 from qiskit.test.mock import FakeVigo
@@ -69,15 +69,17 @@ def quantum_computer():
         elif request.form["BackendDecision"] == "IBMQSimulator":
             backend = FakeVigo()
         else:
-            backend = BasicAer.get_backend("qasm_simulator")
+            backend = Aer.get_backend('qasm_simulator')
         print(backend)
-
+        start = time()
         job = execute(qc, backend, shots=200)
 
         if request.form["BackendDecision"] == "IBMQ":
             return render_template("rediriction.html", url="https://quantum-computing.ibm.com/jobs/{}".format(job.job_id()))
 
+
         result = job.result()
+        print(time() - start)
         counts = result.get_counts(qc)
         qc.draw("mpl", filename="static/images/out.png")
         print(counts)
