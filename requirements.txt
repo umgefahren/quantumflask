@@ -58,7 +58,7 @@ six==1.16.0
 sympy==1.7.1
 threadpoolctl==2.1.0
 urllib3==1.26.4
-websockets==9.0.2
+websockets==9.1
 Werkzeug==2.0.1
 yfinance==0.1.55
 gunicorn==20.1.0
