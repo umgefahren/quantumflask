@@ -29,7 +29,7 @@ nest-asyncio==1.5.1
 ntlm-auth==1.5.0
 numpy==1.20.1
 pandas==1.2.3
-Pillow==8.3.2
+Pillow==9.0.0
 pip==21.1.2
 ply==3.11
 psutil==5.8.0
